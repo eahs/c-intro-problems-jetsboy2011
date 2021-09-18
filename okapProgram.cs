@@ -31,15 +31,30 @@ namespace Okapi
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter two numbers: ");
+            Console.Write("Enter three numbers: ");
             
             // This is Linq.  Linq can make your life pretty easy
             var nums = Console.ReadLine() // Read a string from the user
-                .Split(" ") // Split the text input into an array of strings
+                .Split(" ") // Spl+it the text input into an array of strings
                 .Select(n => Convert.ToInt32(n)) // Select each string and convert it to an integer
                 .ToList(); // Now turn the integer collection into a List
+            Console.WriteLine($"You entered {nums[0]} and {nums[1]} and {nums[2]}");
+            if (nums[0] == nums[1] && nums[0] == nums[2])
+            {
+                nums[0] = nums[0] + nums[1] + nums[2];
+                Console.Write("The payout is $" + nums[0]);
+            }
+            if (nums[0] == nums[1] && nums[0] != nums[2])
+            {
+                nums[0] = nums[0] * 2;
+                Console.Write("The payout is $" + nums[0]);
+            }
+            if (nums[1] == nums[2] && nums[1] != nums[0])
+            {
+                nums[1] = nums[1] * 2;
+                Console.Write("The payout is $" + nums[1]);
+            }
             
-            Console.WriteLine($"You entered {nums[0]} and {nums[1]}");
             
         }
     }
