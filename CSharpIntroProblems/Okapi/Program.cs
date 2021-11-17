@@ -31,7 +31,7 @@ namespace Okapi
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter two numbers: ");
+            Console.Write("Enter dice numbers: ");
             
             // This is Linq.  Linq can make your life pretty easy
             var nums = Console.ReadLine() // Read a string from the user

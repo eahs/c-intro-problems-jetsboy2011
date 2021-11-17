@@ -37,29 +37,41 @@ namespace VowelShifter
             string input = Console.ReadLine();
             
             // In C#, strings can be accessed similar to arrays
-            Console.WriteLine($"Before: {input}");
+            Console.WriteLine($"Before: {'a'} After: {'e'}");
 
             string output = "";
+            
+
             for (int i = 0; i < input.Length; i++)
             {
                 // Let's grab one character from the input at index i
                 char current = input[i];
-                
+               
+
                 // Turn any 'e' to a '3'
-                if (current == 'e')
-                {
-                    current = '3';
-                }
-                
-                // Make every other letter uppercase
+               if (current == 'a')
+               {
+                   input.Replace('a', 'e');
+               }
+
+
+
+
+
+
+
+
+               // Make every other letter uppercase
                 if (i % 2 == 0)
                 {
                     current = Char.ToUpper(current);
+                    
                 }
-                
+
                 output += current;
+
             }
-            
+
             Console.WriteLine($"After: {output}");
         }
     }
